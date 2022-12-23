@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:income_expense/components/custom_bottom_nav_bar.dart';
 import 'package:income_expense/views/home/home.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         highlightColor: Colors.transparent,
         primarySwatch: Colors.grey,
       ),
+      //TODO: edit application ratio
       home: const CustomBottomNavigationBar(),
     );
   }

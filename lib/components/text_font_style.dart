@@ -25,7 +25,7 @@ class TextFontStyle extends StatelessWidget {
       data,
       textAlign: align ?? TextAlign.left,
       style: TextStyle(
-        fontFamily: 'SukhumvitSet',
+        fontFamily: 'Montserrat',
         fontSize: size ?? fontSizeS,
         color: color ?? textColorBlack,
         fontWeight: weight ?? FontWeight.normal,

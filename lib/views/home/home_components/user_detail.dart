@@ -7,40 +7,45 @@ class UserDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // circle avatar
-            CircleAvatar(
-              child: Image.asset(
-                'assets/icons/account_outlined_icon.png',
-                height: 18.0,
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: marginL,
+        right: marginL,
+        top: marginM,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CircleAvatar(
+                child: Image.asset(
+                  'assets/icons/account_outlined_icon.png',
+                  height: iconSize,
+                ),
               ),
-            ),
-            // details
-            const SizedBox(width: marginL),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                TextFontStyle(
-                  'Welcome!',
-                  size: fontSizeXS,
-                ),
-                SizedBox(height: marginS),
-                TextFontStyle(
-                  'Anne Hathaway',
-                  size: fontSizeM,
-                  weight: FontWeight.bold,
-                ),
-              ],
-            ),
-          ],
-        ),
-        const SizedBox(height: marginL),
-      ],
+              const SizedBox(width: marginL),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  TextFontStyle(
+                    'Welcome!',
+                    size: fontSizeXS,
+                  ),
+                  SizedBox(height: marginS),
+                  TextFontStyle(
+                    'Anne Hathaway',
+                    size: fontSizeL,
+                    weight: FontWeight.bold,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: marginL),
+        ],
+      ),
     );
   }
 }

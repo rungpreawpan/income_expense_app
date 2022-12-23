@@ -15,60 +15,96 @@ class TabSelected extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 40.0,
-            padding: const EdgeInsets.all(2.0),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade400,
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: TabBar(
-              indicator: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: marginL),
+            child: Container(
+              height: 40.0,
+              padding: const EdgeInsets.all(2.0),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade400,
+                borderRadius: BorderRadius.circular(10.0),
               ),
-              labelStyle: const TextStyle(
-                fontSize: fontSizeM,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'SukhumvitSet',
-              ),
-              tabs: const [
-                Tab(text: 'Income'),
-                Tab(text: 'Expense'),
-              ],
-            ),
-          ),
-          const SizedBox(height: marginL),
-          const TextFontStyle(
-            'Transactions',
-            size: fontSizeM,
-            weight: FontWeight.bold,
-          ),
-          const SizedBox(height: marginL),
-          Container(
-            height: 300,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 1.0,
-                  blurRadius: 5.0,
-                  offset: const Offset(1.0, 1.0),
+              child: TabBar(
+                indicator: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
-              ],
+                labelStyle: const TextStyle(
+                  fontSize: fontSizeM,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Montserrat',
+                ),
+                tabs: const [
+                  Tab(text: 'Income'),
+                  Tab(text: 'Expense'),
+                ],
+              ),
             ),
-            child: const TabBarView(
+          ),
+          const SizedBox(height: marginL),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: marginL),
+            child: TextFontStyle(
+              'Transactions',
+              size: fontSizeM,
+              weight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: marginL),
+          const SizedBox(
+            height: 400,
+            child: TabBarView(
               physics: NeverScrollableScrollPhysics(),
               children: [
                 Transaction(
                   transactionCard: [
-                    TransactionCard(),
+                    TransactionCard(
+                      icon: 'assets/icons/card/bread_outlined_icon.png',
+                      title: 'Food',
+                      total: '200.00',
+                      updateTime: 'Yesterday',
+                    ),
+                    TransactionCard(
+                      icon: 'assets/icons/card/shopping_outlined_icon.png',
+                      title: 'Shopping',
+                      total: '142.85',
+                      updateTime: 'Yesterday',
+                    ),
+                    TransactionCard(
+                      icon: 'assets/icons/card/bread_outlined_icon.png',
+                      title: 'Food',
+                      total: '142.85',
+                      updateTime: 'Yesterday',
+                    ),
+                    TransactionCard(
+                      icon: 'assets/icons/card/utilities_outlined_icon.png',
+                      title: 'Utilities',
+                      total: '142.85',
+                      updateTime: 'Yesterday',
+                    ),
+                    TransactionCard(
+                      icon: 'assets/icons/card/bread_outlined_icon.png',
+                      title: 'Food',
+                      total: '142.85',
+                      updateTime: 'Yesterday',
+                    ),
+                    TransactionCard(
+                      icon: 'assets/icons/card/bread_outlined_icon.png',
+                      title: 'Food',
+                      total: '142.85',
+                      updateTime: 'Yesterday',
+                    ),
                   ],
                 ),
                 Transaction(
-                  transactionCard: [],
+                  transactionCard: [
+                    TransactionCard(
+                      icon: 'assets/icons/card/bread_outlined_icon.png',
+                      title: 'Food',
+                      total: '142.85',
+                      updateTime: 'Yesterday',
+                    ),
+                  ],
                 ),
               ],
             ),

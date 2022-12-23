@@ -2,13 +2,15 @@
 import 'package:flutter/material.dart';
 
 const iconSize = 18.0;
+const iconCardSize = 30.0;
 
 // font size
 const fontSizeXS = 10.0;
 const fontSizeS = 12.0;
 const fontSizeM = 14.0;
 const fontSizeL = 16.0;
-const fontAppBar = 24.0;
+const fontSizeXL = 18.0;
+const fontAppBar = 20.0;
 
 // text color
 const textColorWhite = Colors.white;

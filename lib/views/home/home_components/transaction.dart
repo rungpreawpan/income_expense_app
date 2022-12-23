@@ -12,22 +12,16 @@ class Transaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
-      padding: const EdgeInsets.all(marginL),
+      height: 400,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 1.0,
-            blurRadius: 5.0,
-            offset: const Offset(1.0, 1.0),
-          ),
-        ],
       ),
-      child: ListView(
-        children: transactionCard,
+      child: Scrollbar(
+        child: ListView(
+          padding: const EdgeInsets.only(top: marginS),
+          children: transactionCard,
+        ),
       ),
     );
   }
