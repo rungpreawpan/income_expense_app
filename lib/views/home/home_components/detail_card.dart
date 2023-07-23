@@ -22,7 +22,7 @@ class DetailCard extends StatelessWidget {
         Container(
           height: 50.0,
           width: Get.width,
-          padding: const EdgeInsets.all(marginM),
+          padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10.0),
@@ -38,7 +38,7 @@ class DetailCard extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: TextFontStyle(
                   day,
                   weight: FontWeight.bold,
@@ -46,22 +46,30 @@ class DetailCard extends StatelessWidget {
               ),
               Expanded(
                 flex: 3,
-                child: TextFontStyle(
-                  details,
-                  weight: FontWeight.bold,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextFontStyle(
+                      details,
+                      weight: FontWeight.bold,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
                 ),
               ),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: TextFontStyle(
                   total,
+                  align: TextAlign.end,
                   weight: FontWeight.bold,
                 ),
               ),
             ],
           ),
         ),
-        const SizedBox(height: marginM),
+        const SizedBox(height: margin),
       ],
     );
   }

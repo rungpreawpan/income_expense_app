@@ -5,12 +5,12 @@ import 'package:income_expense/constant/constant.dart';
 import 'package:income_expense/views/home/home_components/custom_chart.dart';
 import 'package:income_expense/views/home/home_components/detail_card.dart';
 
-class TransactionCardDetails extends StatelessWidget {
+class TransactionCardDetailsPage extends StatelessWidget {
   final String appBarTitle;
   final String total;
   final String percent;
 
-  const TransactionCardDetails({
+  const TransactionCardDetailsPage({
     Key? key,
     required this.appBarTitle,
     required this.total,
@@ -20,6 +20,7 @@ class TransactionCardDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         title: TextFontStyle(
           appBarTitle,
@@ -29,12 +30,14 @@ class TransactionCardDetails extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: marginL),
+          padding: const EdgeInsets.symmetric(vertical: marginX2),
           child: Column(
             children: [
               _totalBox(),
-              const SizedBox(height: marginL),
-              _dataList(),
+              const SizedBox(height: marginX2),
+              Expanded(
+                child: _dataList(),
+              ),
             ],
           ),
         ),
@@ -44,13 +47,13 @@ class TransactionCardDetails extends StatelessWidget {
 
   _totalBox() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: marginL),
+      padding: const EdgeInsets.symmetric(horizontal: marginX2),
       child: Container(
         height: 80.0,
         width: Get.width,
         padding: const EdgeInsets.symmetric(
-          horizontal: marginL,
-          vertical: marginM,
+          horizontal: marginX2,
+          vertical: margin,
         ),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -74,7 +77,7 @@ class TransactionCardDetails extends StatelessWidget {
                 height: iconCardSize,
               ),
             ),
-            const SizedBox(width: marginL),
+            const SizedBox(width: marginX2),
             Expanded(
               child: Column(
                 children: [
@@ -101,7 +104,7 @@ class TransactionCardDetails extends StatelessWidget {
                       const Expanded(
                         child: CustomChart(percent: 30.0),
                       ),
-                      const SizedBox(width: marginL),
+                      const SizedBox(width: marginX2),
                       TextFontStyle(
                         '$percent%',
                         size: fontSizeXS,
@@ -119,10 +122,8 @@ class TransactionCardDetails extends StatelessWidget {
 
   _dataList() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: marginL),
-      child: SizedBox(
-        height: 550.0,
-        child: Column(
+      padding: const EdgeInsets.symmetric(horizontal: marginX2),
+      child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TextFontStyle(
@@ -130,35 +131,37 @@ class TransactionCardDetails extends StatelessWidget {
               size: fontSizeM,
               weight: FontWeight.bold,
             ),
-            const SizedBox(height: marginM),
-            ListView(
-              shrinkWrap: true,
-              children: const [
-                DetailCard(
-                  day: '24/12/22',
-                  details: 'Lunch',
-                  total: '\$13',
+            const SizedBox(height: margin),
+            Scrollbar(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: const [
+                    DetailCard(
+                      day: '24/12/2022',
+                      details: 'Lunchhhhhhhhhhhhhhhhhhh',
+                      total: '\$13.00',
+                    ),
+                    DetailCard(
+                      day: '24/12/2022',
+                      details: 'Lunch',
+                      total: '\$13.00',
+                    ),
+                    DetailCard(
+                      day: '24/12/2022',
+                      details: 'Lunch',
+                      total: '\$13.00',
+                    ),
+                    DetailCard(
+                      day: '24/12/2022',
+                      details: 'Lunch',
+                      total: '\$13.00',
+                    ),
+                  ],
                 ),
-                DetailCard(
-                  day: '24/12/22',
-                  details: 'Lunch',
-                  total: '\$13',
-                ),
-                DetailCard(
-                  day: '24/12/22',
-                  details: 'Lunch',
-                  total: '\$13',
-                ),
-                DetailCard(
-                  day: '24/12/22',
-                  details: 'Lunch',
-                  total: '\$13',
-                ),
-              ],
+              ),
             ),
           ],
         ),
-      ),
     );
   }
 }

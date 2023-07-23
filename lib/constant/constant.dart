@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 const iconSize = 18.0;
+const iconAppbarSize = 24.0;
 const iconCardSize = 30.0;
 
 // font size
@@ -18,7 +19,15 @@ const textColorGrey = Colors.grey;
 const textColorBlack = Colors.black;
 
 // padding and margin
-const marginS = 4.0;
-const marginM = 8.0;
-const marginL = 16.0;
-const marginXL = 24.0;
+const margin = 8.0;
+const marginX2 = 16.0;
+
+// box shadow
+List<BoxShadow> customBoxShadow = [
+  BoxShadow(
+    color: Colors.grey.withOpacity(0.5),
+    spreadRadius: 1.0,
+    blurRadius: 5.0,
+    offset: const Offset(1.0, 1.0),
+  ),
+];

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:income_expense/components/text_font_style.dart';
 import 'package:income_expense/constant/constant.dart';
-import 'package:income_expense/views/home/home_components/transaction_card_details.dart';
+import 'package:income_expense/views/home/transaction_card_details_page.dart';
 
 class TransactionCard extends StatelessWidget {
   final String icon;
@@ -21,13 +21,13 @@ class TransactionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: marginL),
+      padding: const EdgeInsets.symmetric(horizontal: marginX2),
       child: Column(
         children: [
           InkWell(
             onTap: () {
               Get.to(
-                () => TransactionCardDetails(
+                () => TransactionCardDetailsPage(
                   appBarTitle: title,
                   total: '\$$total',
                   percent: '90',
@@ -38,8 +38,8 @@ class TransactionCard extends StatelessWidget {
               height: 70.0,
               width: Get.width,
               padding: const EdgeInsets.symmetric(
-                horizontal: marginL,
-                vertical: marginM,
+                horizontal: marginX2,
+                vertical: margin,
               ),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -64,7 +64,7 @@ class TransactionCard extends StatelessWidget {
                       height: iconCardSize,
                     ),
                   ),
-                  const SizedBox(width: marginL),
+                  const SizedBox(width: marginX2),
                   Expanded(
                     child: TextFontStyle(
                       title,
@@ -81,7 +81,7 @@ class TransactionCard extends StatelessWidget {
                         size: fontSizeM,
                         weight: FontWeight.bold,
                       ),
-                      const SizedBox(height: marginS),
+                      const SizedBox(height: 4.0),
                       TextFontStyle(
                         updateTime,
                         size: fontSizeXS,
@@ -92,7 +92,7 @@ class TransactionCard extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: marginM),
+          const SizedBox(height: margin),
         ],
       ),
     );

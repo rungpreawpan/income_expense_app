@@ -9,13 +9,13 @@ class BalanceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: marginL),
+      padding: const EdgeInsets.symmetric(horizontal: marginX2),
       child: Column(
         children: [
           Container(
             height: 100.0,
             width: Get.width,
-            padding: const EdgeInsets.symmetric(horizontal: marginL),
+            padding: const EdgeInsets.symmetric(horizontal: marginX2),
             decoration: BoxDecoration(
               color: Colors.grey.shade400,
               borderRadius: BorderRadius.circular(10.0),
@@ -37,7 +37,7 @@ class BalanceCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       TextFontStyle('Total Balance'),
-                      SizedBox(height: marginS),
+                      SizedBox(height: 4.0),
                       TextFontStyle(
                         '\$ 5,000.00',
                         size: 22,
@@ -53,7 +53,7 @@ class BalanceCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       _incomeBox(),
-                      const SizedBox(height: marginM),
+                      const SizedBox(height: margin),
                       _expenseBox(),
                     ],
                   ),
@@ -61,7 +61,7 @@ class BalanceCard extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: marginL),
+          const SizedBox(height: marginX2),
         ],
       ),
     );
